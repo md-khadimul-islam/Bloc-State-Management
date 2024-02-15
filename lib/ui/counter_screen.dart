@@ -29,30 +29,24 @@ class _CounterScreenState extends State<CounterScreen> {
               builder: (context, state) {
                 return Text(
                   state.counter.toString(),
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context).textTheme.headline4,
                 );
               },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TextButton(
+                ElevatedButton(
                   onPressed: () {
                     context.read<CounterBloc>().add(IncrementCounter());
                   },
-                  child: Text(
-                    'Increment',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  child: const Text('Increment'),
                 ),
-                TextButton(
+                ElevatedButton(
                   onPressed: () {
                     context.read<CounterBloc>().add(DecrementCounter());
                   },
-                  child: Text(
-                    'Decrement',
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                  child: const Text('Decrement'),
                 ),
               ],
             ),
